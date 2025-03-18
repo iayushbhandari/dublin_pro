@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Dublin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="places.html">Attractions</a></li>
+                <li><a href="food.html">Dining</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="about.html">City Info</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Fare Estimator</h2>
+            <label for="visitorName">Your Name:</label>
+            <input type="text" id="visitorName">
+            <label for="visitorAge">Your Age:</label>
+            <input type="number" id="visitorAge">
+            <button onclick="calculateFare()">Check Fare</button>
+            <p id="fareMessage"></p>
+        </section>
+        
+        <section>
+            <h2>Preferred Cuisine</h2>
+            <label for="inputName">Enter Your Name:</label>
+            <input type="text" id="inputName">
+            <label for="favCuisine">Your Favorite Cuisine:</label>
+            <input type="text" id="favCuisine">
+            <button onclick="showCuisine()">Submit</button>
+            <br>
+            <textarea id="cuisineOutput" readonly></textarea>
+        </section>
+    </main>
+    
+    <script>
+        function calculateFare() {
+            let ageInput = document.getElementById("visitorAge").value;
+            let fareMessage = ageInput < 20 ? "Eligible for child fare" : "Standard adult fare applies";
+            document.getElementById("fareMessage").textContent = fareMessage;
+        }
+
+        function showCuisine() {
+    let userName = document.getElementById("inputName").value;
+    let cuisineType = document.getElementById("favCuisine").value;
+    document.getElementById("cuisineOutput").textContent = `${userName} enjoys ${cuisineType}!`;  // Fixed this line
+}
+
+    </script>
+</body>
+</html>
